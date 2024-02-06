@@ -6,55 +6,49 @@ class StartScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            Color.fromARGB(255, 78, 61, 246),
-            Color.fromARGB(255, 70, 91, 140),
-          ],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-        ),
-      ),
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            Image.asset(
-              "assets/images/quiz-logo.png",
-              width: 300,
+    return Center(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Image.asset(
+            "assets/images/quiz-logo.png",
+            width: 300,
+            color: Colors.white.withOpacity(0.4),
+          ),
+          const SizedBox(height: 80),
+          Text(
+            "Learn Flutter the fun way!",
+            style: GoogleFonts.lato(
+              fontSize: 26,
+              color: const Color.fromARGB(255, 188, 194, 246),
             ),
-            const SizedBox(height: 28),
-            Text(
-              "Learn Flutter the fun way!",
-              style: GoogleFonts.lato(
-                fontSize: 26,
-                color: const Color.fromARGB(255, 188, 194, 246),
+          ),
+          const SizedBox(height: 50),
+          OutlinedButton.icon(
+            onPressed: () {},
+            style: OutlinedButton.styleFrom(
+              foregroundColor: const Color.fromARGB(255, 188, 194, 246),
+              textStyle: const TextStyle(
+                fontSize: 18,
               ),
-            ),
-            const SizedBox(height: 42),
-            OutlinedButton(
-              onPressed: () {},
-              style: OutlinedButton.styleFrom(
-                foregroundColor: const Color.fromARGB(255, 188, 194, 246),
-                textStyle: const TextStyle(
-                  fontSize: 18,
-                ),
-                shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(5),
-                  ),
-                ),
-                side: const BorderSide(
-                  color: Color.fromARGB(255, 188, 194, 246),
+              shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(5),
                 ),
               ),
-              child: Text("Start Quiz", style: GoogleFonts.lato()),
+              side: const BorderSide(
+                color: Color.fromARGB(255, 188, 194, 246),
+              ),
             ),
-          ],
-        ),
+            icon: const Icon(
+              Icons.arrow_right_alt_outlined,
+            ),
+            label: Text(
+              "Start Quiz",
+              style: GoogleFonts.lato(),
+            ),
+          ),
+        ],
       ),
     );
   }
