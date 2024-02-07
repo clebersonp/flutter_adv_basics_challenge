@@ -1,4 +1,7 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_adv_basics_challenge/data/questions.dart';
 import 'package:flutter_adv_basics_challenge/models/answer_question.dart';
 import 'package:flutter_adv_basics_challenge/questions_screen.dart';
 import 'package:flutter_adv_basics_challenge/screens.dart';
@@ -23,7 +26,16 @@ class _QuizState extends State<Quiz> {
     if (!selectedAnswers.contains(answer)) {
       selectedAnswers.add(answer);
     }
-    debugPrint("$selectedAnswers");
+    log("$selectedAnswers");
+
+    // change to result screen when the user's answer list is full
+    if (selectedAnswers.length == questions.length) {
+      // go back to start quiz screen for now
+      setState(() {
+        selectedAnswers.clear();
+        activeScreen = Screens.startScreen;
+      });
+    }
   }
 
   @override
