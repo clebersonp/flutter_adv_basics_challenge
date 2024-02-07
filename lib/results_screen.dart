@@ -5,9 +5,11 @@ class ResultsScreen extends StatelessWidget {
   const ResultsScreen({
     super.key,
     required this.chosenAnswers,
+    required this.reset,
   });
 
   final List<AnswerQuestion> chosenAnswers;
+  final void Function() reset;
 
   int get qtdQuestions {
     return chosenAnswers.length;
@@ -37,7 +39,7 @@ class ResultsScreen extends StatelessWidget {
             const Text("List of answers and questions..."),
             const SizedBox(height: 30),
             TextButton(
-              onPressed: () {},
+              onPressed: reset,
               child: const Text("Restart Quiz!"),
             ),
           ],
