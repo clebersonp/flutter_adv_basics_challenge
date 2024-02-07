@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_adv_basics_challenge/models/answer_question.dart';
 import 'package:flutter_adv_basics_challenge/questions_screen.dart';
 import 'package:flutter_adv_basics_challenge/screens.dart';
 import 'package:flutter_adv_basics_challenge/start_screen.dart';
@@ -12,9 +13,17 @@ class Quiz extends StatefulWidget {
 
 class _QuizState extends State<Quiz> {
   var activeScreen = Screens.startScreen;
+  final List<AnswerQuestion> selectedAnswers = [];
 
   void switchScreen() {
     setState(() => activeScreen = Screens.questions);
+  }
+
+  void chooseAnswer(AnswerQuestion answer) {
+    if (!selectedAnswers.contains(answer)) {
+      selectedAnswers.add(answer);
+    }
+    debugPrint("$selectedAnswers");
   }
 
   @override
@@ -22,7 +31,9 @@ class _QuizState extends State<Quiz> {
     Widget screenWidget = StartScreen(switchScreen);
 
     if (Screens.questions == activeScreen) {
-      screenWidget = const QuestionsScreen();
+      screenWidget = QuestionsScreen(
+        onSelectedAnswer: chooseAnswer,
+      );
     }
 
     return MaterialApp(
