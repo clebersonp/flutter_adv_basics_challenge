@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_adv_basics_challenge/data/questions.dart';
 import 'package:flutter_adv_basics_challenge/models/answer_question.dart';
 import 'package:flutter_adv_basics_challenge/questions_screen.dart';
+import 'package:flutter_adv_basics_challenge/results_screen.dart';
 import 'package:flutter_adv_basics_challenge/screens.dart';
 import 'package:flutter_adv_basics_challenge/start_screen.dart';
 
@@ -32,8 +33,7 @@ class _QuizState extends State<Quiz> {
     if (selectedAnswers.length == questions.length) {
       // go back to start quiz screen for now
       setState(() {
-        selectedAnswers.clear();
-        activeScreen = Screens.startScreen;
+        activeScreen = Screens.resultsScreen;
       });
     }
   }
@@ -46,6 +46,9 @@ class _QuizState extends State<Quiz> {
       screenWidget = QuestionsScreen(
         onSelectedAnswer: chooseAnswer,
       );
+    }
+    if (Screens.resultsScreen == activeScreen) {
+      screenWidget = const ResultsScreen();
     }
 
     return MaterialApp(
