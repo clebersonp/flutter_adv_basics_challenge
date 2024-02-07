@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_adv_basics_challenge/answer_button.dart';
 import 'package:flutter_adv_basics_challenge/data/questions.dart';
 import 'package:flutter_adv_basics_challenge/models/answer_question.dart';
+import 'package:flutter_adv_basics_challenge/models/question.dart';
+import 'package:flutter_adv_basics_challenge/models/quiz_answer.dart';
+import 'package:flutter_adv_basics_challenge/models/quiz_question.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class QuestionsScreen extends StatefulWidget {
@@ -53,13 +56,23 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
               (answer) => AnswerButton(
                 quizAnswer: answer,
                 onTap: () => answerQuestion(
-                  AnswerQuestion(question: currentQuestion, userAnswer: answer),
+                  buildAnswerQuestion(currentQuestion, answer),
                 ),
               ),
             )
           ],
         ),
       ),
+    );
+  }
+
+  AnswerQuestion buildAnswerQuestion(
+      QuizQuestion currentQuestion, QuizAnswer answer) {
+    return AnswerQuestion(
+      question: Question(id: currentQuestion.id, title: currentQuestion.title),
+      correctAnswer:
+          currentQuestion.answers.singleWhere((answer) => answer.correct),
+      userAnswer: answer,
     );
   }
 }
