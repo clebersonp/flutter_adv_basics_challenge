@@ -1,1 +1,1 @@
-enum Screens { startScreen, questions }
+enum Screens { startScreen, questions, resultsScreen }
