@@ -3,8 +3,11 @@ import 'package:flutter_adv_basics_challenge/models/quiz_answer.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AnswerButton extends StatelessWidget {
-  const AnswerButton(
-      {super.key, required this.quizAnswer, required this.onTap});
+  const AnswerButton({
+    super.key,
+    required this.quizAnswer,
+    required this.onTap,
+  });
 
   final QuizAnswer quizAnswer;
   final void Function() onTap;
