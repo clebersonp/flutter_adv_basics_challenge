@@ -13,18 +13,18 @@ class Quiz extends StatefulWidget {
 class _QuizState extends State<Quiz> {
   var activeScreen = Screens.startScreen;
 
-  Widget getScreen() {
-    return Screens.startScreen == activeScreen
-        ? StartScreen(switchScreen)
-        : const QuestionsScreen();
-  }
-
   void switchScreen() {
     setState(() => activeScreen = Screens.questions);
   }
 
   @override
   Widget build(BuildContext context) {
+    Widget screenWidget = StartScreen(switchScreen);
+
+    if (Screens.questions == activeScreen) {
+      screenWidget = const QuestionsScreen();
+    }
+
     return MaterialApp(
       title: "Flutter adv basics challenge",
       home: Scaffold(
@@ -39,7 +39,7 @@ class _QuizState extends State<Quiz> {
               end: Alignment.bottomRight,
             ),
           ),
-          child: getScreen(),
+          child: screenWidget,
         ),
       ),
     );
