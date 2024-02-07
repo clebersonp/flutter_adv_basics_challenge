@@ -16,6 +16,14 @@ class QuizQuestion {
 
   List<QuizAnswer> get answers => _answers;
 
+  List<QuizAnswer> get shuffleAnswers {
+    final shuffleAnswers = List.of(answers);
+    shuffleAnswers.shuffle();
+    // debugPrint("List before shuffled: $answers\n");
+    // debugPrint("List after shuffled: $shuffleAnswers");
+    return shuffleAnswers;
+  }
+
   @override
   String toString() {
     return 'QuizQuestion{_id: $_id, _title: $_title, _answers: $_answers}';
