@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_adv_basics_challenge/answer_button.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class QuestionsScreen extends StatefulWidget {
@@ -24,21 +25,21 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
             ),
           ),
           const SizedBox(height: 30),
-          ElevatedButton(
-            onPressed: () {},
-            child: const Text("Answer 1"),
+          AnswerButton(
+            text: "Answer 1",
+            onTap: () {},
           ),
-          ElevatedButton(
-            onPressed: () {},
-            child: const Text("Answer 2"),
+          AnswerButton(
+            text: "Answer 2",
+            onTap: () {},
           ),
-          ElevatedButton(
-            onPressed: () {},
-            child: const Text("Answer 3"),
+          AnswerButton(
+            text: "Answer 3",
+            onTap: () {},
           ),
-          ElevatedButton(
-            onPressed: () {},
-            child: const Text("Answer 4"),
+          AnswerButton(
+            text: "Answer 4",
+            onTap: () {},
           ),
         ],
       ),
