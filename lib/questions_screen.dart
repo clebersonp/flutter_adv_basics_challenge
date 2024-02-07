@@ -11,9 +11,10 @@ class QuestionsScreen extends StatefulWidget {
 class _QuestionsScreenState extends State<QuestionsScreen> {
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return SizedBox(
+      width: double.infinity,
       child: Column(
-        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
             "Learn Flutter the fun way!",
@@ -21,6 +22,23 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
               fontSize: 26,
               color: const Color.fromARGB(255, 188, 194, 246),
             ),
+          ),
+          const SizedBox(height: 30),
+          ElevatedButton(
+            onPressed: () {},
+            child: const Text("Answer 1"),
+          ),
+          ElevatedButton(
+            onPressed: () {},
+            child: const Text("Answer 2"),
+          ),
+          ElevatedButton(
+            onPressed: () {},
+            child: const Text("Answer 3"),
+          ),
+          ElevatedButton(
+            onPressed: () {},
+            child: const Text("Answer 4"),
           ),
         ],
       ),
