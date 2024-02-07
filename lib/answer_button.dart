@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_adv_basics_challenge/models/quiz_answer.dart';
 
 class AnswerButton extends StatelessWidget {
-  const AnswerButton({super.key, required this.text, required this.onTap});
+  const AnswerButton({super.key, required this.quizAnswer, required this.onTap});
 
-  final String text;
+  final QuizAnswer quizAnswer;
   final void Function() onTap;
 
   @override
@@ -18,7 +19,7 @@ class AnswerButton extends StatelessWidget {
         ),
         padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 40),
       ),
-      child: Text(text),
+      child: Text(quizAnswer.text),
     );
   }
 }
