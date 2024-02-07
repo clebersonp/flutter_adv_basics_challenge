@@ -13,4 +13,9 @@ class QuizAnswer {
   String get text => _text;
 
   bool get correct => _correct;
+
+  @override
+  String toString() {
+    return 'QuizAnswer{_id: $_id, _text: $_text, _correct: $_correct}';
+  }
 }

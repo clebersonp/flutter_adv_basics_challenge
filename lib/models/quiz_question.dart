@@ -15,4 +15,9 @@ class QuizQuestion {
   String get title => _title;
 
   List<QuizAnswer> get answers => _answers;
+
+  @override
+  String toString() {
+    return 'QuizQuestion{_id: $_id, _title: $_title, _answers: $_answers}';
+  }
 }
