@@ -1,12 +1,16 @@
 class QuizAnswer {
-  final String _answer;
+  final int _id;
+  final String _text;
   final bool _correct;
 
-  const QuizAnswer(String answer, bool correct)
-      : _answer = answer,
+  const QuizAnswer(int id, String text, bool correct)
+      : _id = id,
+        _text = text,
         _correct = correct;
 
-  String get answer => _answer;
+  int get id => _id;
+
+  String get text => _text;
 
   bool get correct => _correct;
 }
