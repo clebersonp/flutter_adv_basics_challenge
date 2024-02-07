@@ -4,19 +4,19 @@ import 'package:flutter_adv_basics_challenge/models/quiz_question.dart';
 class AnswerQuestion {
   const AnswerQuestion({
     required QuizQuestion question,
-    required QuizAnswer answer,
+    required QuizAnswer userAnswer,
   })  : _question = question,
-        _answer = answer;
+        _userAnswer = userAnswer;
 
   final QuizQuestion _question;
-  final QuizAnswer _answer;
+  final QuizAnswer _userAnswer;
 
   QuizQuestion get question => _question;
 
-  QuizAnswer get answer => _answer;
+  QuizAnswer get userAnswer => _userAnswer;
 
   @override
   String toString() {
-    return 'AnswerQuestion{_question: $_question, _answer: $_answer}';
+    return 'AnswerQuestion{_question: $_question, _userAnswer: $_userAnswer}';
   }
 }

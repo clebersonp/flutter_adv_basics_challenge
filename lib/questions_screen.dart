@@ -20,8 +20,8 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
   var currentQuestionIndex = 0;
 
   void answerQuestion(AnswerQuestion answer) {
+    widget.onSelectedAnswer(answer);
     if (currentQuestionIndex < questions.length - 1) {
-      widget.onSelectedAnswer(answer);
       setState(() {
         currentQuestionIndex++;
       });
@@ -53,7 +53,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
               (answer) => AnswerButton(
                 quizAnswer: answer,
                 onTap: () => answerQuestion(
-                  AnswerQuestion(question: currentQuestion, answer: answer),
+                  AnswerQuestion(question: currentQuestion, userAnswer: answer),
                 ),
               ),
             )
