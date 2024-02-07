@@ -24,9 +24,6 @@ class _QuizState extends State<Quiz> {
   }
 
   void chooseAnswer(AnswerQuestion answer) {
-    if (!selectedAnswers.contains(answer)) {
-      selectedAnswers.add(answer);
-    }
     log("$selectedAnswers");
 
     // change to result screen when the user's answer list is full
