@@ -1,7 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_adv_basics_challenge/models/answer_question.dart';
 
 class ResultsScreen extends StatelessWidget {
-  const ResultsScreen({super.key});
+  const ResultsScreen({
+    super.key,
+    required this.chosenAnswers,
+  });
+
+  final List<AnswerQuestion> chosenAnswers;
+
+  int get qtdQuestions {
+    return chosenAnswers.length;
+  }
+
+  int qtdCorrectAnswers() {
+    return chosenAnswers
+        .map((question) => question.userAnswer)
+        .where((answer) => answer.correct)
+        .length;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +29,10 @@ class ResultsScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text("You answered X of Y questions correctly!"),
+            Text(
+              "You answered ${qtdCorrectAnswers()} of $qtdQuestions questions"
+              " correctly!",
+            ),
             const SizedBox(height: 30),
             const Text("List of answers and questions..."),
             const SizedBox(height: 30),
