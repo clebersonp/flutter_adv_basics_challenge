@@ -9,7 +9,7 @@ const List<QuizQuestion> questions = <QuizQuestion>[
       QuizAnswer(1, "It is DBMS toolkit", false),
       QuizAnswer(2, "It is an Open-source UI toolkit", true),
       QuizAnswer(3, "It is an Open-source web development framework", false),
-      QuizAnswer(4, "None of the above", false),
+      QuizAnswer(4, "None of these", false),
     ],
   ),
   QuizQuestion(
@@ -27,7 +27,7 @@ const List<QuizQuestion> questions = <QuizQuestion>[
       QuizAnswer(1, "ListView", true),
       QuizAnswer(2, "ArrayView", false),
       QuizAnswer(3, "ExpandedView", false),
-      QuizAnswer(4, "None of the above", false),
+      QuizAnswer(4, "None of these", false),
     ],
   ),
   QuizQuestion(
@@ -85,7 +85,7 @@ const List<QuizQuestion> questions = <QuizQuestion>[
       QuizAnswer(1, "Serial", false),
       QuizAnswer(2, "Widgets", false),
       QuizAnswer(3, "Keys", true),
-      QuizAnswer(4, "All of the above", false),
+      QuizAnswer(4, "All apply", false),
     ],
   ),
   QuizQuestion(
@@ -105,7 +105,7 @@ const List<QuizQuestion> questions = <QuizQuestion>[
       QuizAnswer(1, "Fast development", false),
       QuizAnswer(2, "Huge widget catalog", false),
       QuizAnswer(3, "High-performance application", false),
-      QuizAnswer(4, "All of the above", true),
+      QuizAnswer(4, "All apply", true),
     ],
   ),
   QuizQuestion(
@@ -153,7 +153,7 @@ const List<QuizQuestion> questions = <QuizQuestion>[
       QuizAnswer(1, "width, double", false),
       QuizAnswer(2, "height, double", false),
       QuizAnswer(3, "image, ImageProvider", false),
-      QuizAnswer(4, "all of the above", true),
+      QuizAnswer(4, "All apply", true),
     ],
   ),
   QuizQuestion(
@@ -163,7 +163,7 @@ const List<QuizQuestion> questions = <QuizQuestion>[
       QuizAnswer(1, "Software Data Kit", false),
       QuizAnswer(2, "Software Database Kit", false),
       QuizAnswer(3, "Software Development Kit", true),
-      QuizAnswer(4, "None of the above", false),
+      QuizAnswer(4, "None of these", false),
     ],
   ),
   QuizQuestion(
@@ -173,7 +173,7 @@ const List<QuizQuestion> questions = <QuizQuestion>[
       QuizAnswer(1, "VS Code", false),
       QuizAnswer(2, "Sublime Text", false),
       QuizAnswer(3, "Android Studio", false),
-      QuizAnswer(4, "All of the above", true),
+      QuizAnswer(4, "All apply", true),
     ],
   ),
   QuizQuestion(
@@ -183,7 +183,7 @@ const List<QuizQuestion> questions = <QuizQuestion>[
       QuizAnswer(1, "Unit test", false),
       QuizAnswer(2, "Widget test", false),
       QuizAnswer(3, "Integration test", false),
-      QuizAnswer(4, "All of the above", true),
+      QuizAnswer(4, "All apply", true),
     ],
   ),
   QuizQuestion(
