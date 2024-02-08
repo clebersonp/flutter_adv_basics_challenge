@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_adv_basics_challenge/models/answer_question.dart';
+import 'package:flutter_adv_basics_challenge/questions_summary.dart';
 
 class ResultsScreen extends StatelessWidget {
   const ResultsScreen({
@@ -11,11 +12,11 @@ class ResultsScreen extends StatelessWidget {
   final List<AnswerQuestion> chosenAnswers;
   final void Function() reset;
 
-  int get qtdQuestions {
+  int get totalQuestions {
     return chosenAnswers.length;
   }
 
-  int qtdCorrectAnswers() {
+  int numCorrectQuestions() {
     return chosenAnswers
         .map((question) => question.userAnswer)
         .where((answer) => answer.correct)
@@ -32,11 +33,11 @@ class ResultsScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              "You answered ${qtdCorrectAnswers()} of $qtdQuestions questions"
+              "You answered ${numCorrectQuestions()} of $totalQuestions questions"
               " correctly!",
             ),
             const SizedBox(height: 30),
-            const Text("List of answers and questions..."),
+            QuestionsSummary(summaryData: chosenAnswers),
             const SizedBox(height: 30),
             TextButton(
               onPressed: reset,
